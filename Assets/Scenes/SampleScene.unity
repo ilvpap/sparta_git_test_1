@@ -335,6 +335,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1277142204}
+  followSpeed: 2
+  minPosition: {x: -4, y: -4}
+  maxPosition: {x: 4, y: 4}
 --- !u!1 &671620009
 GameObject:
   m_ObjectHideFlags: 0
