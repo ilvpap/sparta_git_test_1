@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,5 +46,12 @@ public class PlayerController : MonoBehaviour
         //if(moveX != 0)
         //spriteRenderer.flipX = isFlip;
         // bool = 기본 값은 false.. 불리언자료형........조건식....
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SceneManager.LoadScene("MinigameScene");
+        }
     }
 }
