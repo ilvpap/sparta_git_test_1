@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class PlayerController : MonoBehaviour
     //private bool isFlip;
 
     //private const string ismove = "IsMove"; // const 컴파일타입상수? readonly 런타입상수?
-    private readonly int isMoveHash = Animator.StringToHash("IsMove"); // 문자열 Hash => 고유 ID (파라미터 ID 값을 불러와 isMoveHash에 저장을 한다.)
+    private readonly int isMoveHash = Animator.StringToHash("IsMove"); 
+    // 문자열 Hash => 고유 ID (파라미터 ID 값을 불러와 isMoveHash에 저장을 한다.)
 
     private void Start()
     {
@@ -44,5 +46,12 @@ public class PlayerController : MonoBehaviour
         //if(moveX != 0)
         //spriteRenderer.flipX = isFlip;
         // bool = 기본 값은 false.. 불리언자료형........조건식....
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SceneManager.LoadScene("MinigameScene");
+        }
     }
 }
